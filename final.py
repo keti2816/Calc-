@@ -483,6 +483,7 @@ def show_statistics():
     ax2.pie(sizes, labels=labels, autopct='%1.1f%%', startangle=90)
     ax2.set_title("Owns Apartment (Yes / No)")
 
+    conn.commit()
     conn.close()
 
     plt.show()
