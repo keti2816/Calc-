@@ -375,17 +375,7 @@ class Calculator(QMainWindow, Ui_Calculator):
         except Exception as e:
             QMessageBox.critical(self, "Database Error", str(e))
     '''bazidan amoshla id-is mixedvit'''
-    def delete_by_id(self):
-        id_rem = self.idedit.text()
-        try:
-            conn = sqlite3.connect("expenses.sqlite3")
-            cursor = conn.cursor()
-            cursor.execute("DELETE FROM expenses WHERE id = ?", (id_rem,))
-            conn.commit()
-            conn.close()
-        except Exception as e:
-            QMessageBox.critical(self, "Database Error", str(e))
-
+    
     def delete_by_id(self):
         id_rem = self.idedit.text().strip()
         if not id_rem.isdigit():
